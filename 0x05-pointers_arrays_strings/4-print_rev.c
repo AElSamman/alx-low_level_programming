@@ -17,9 +17,9 @@ length++;
 }
 
 /* Print the string in reverse */
-for (int i = length - 1; i >= 0; i--)
+for (length -= 1; length >= 0; length--)
 {
-putchar(s[i]);
+putchar(s[length]);
 }
 
 /* Write a new line character to the standard output */
