@@ -1,45 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/**
- * generate_password - Generates random valid passwords for 101-crackme.
- *
- * Return: The random password.
- */
-char *generate_password(void)
-{
-/**
-* 6 characters + 1 for null terminator
-*/ 
-static char password[7]; 
-const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-int i;
-/**
-* Seed the random number generator
-*/ 
-srand(time(NULL));
-for (i = 0; i < 6; i++)
-{
-/**
-* Get a random index within the charset
-*/ 
-int index = rand() % (sizeof(charset) - 1);
-password[i] = charset[index];
+/*Function to generate a random character from the valid character set*/
+char getRandomCharacter() {
+char validChars[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+/*Excluding the null terminator*/
+int numChars = sizeof(validChars) - 1;
+int randomIndex = rand() % numChars;
+return validChars[randomIndex];
 }
-/**
-* Null-terminate the password
-*/ 
-password[6] = '\0'; 
-return password;
+/*Function to generate a random password of a given length*/
+void generatePassword(int length) {
+for (int i = 0; i < length; i++) {
+char randomChar = getRandomCharacter();
+putchar(randomChar);
 }
-/**
- * main - Entry point.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-char *password = generate_password();
-printf("Generated Password: %s\n", password);
+putchar('\n');
+}
+int main(void) {
+/*Number of passwords to generate*/
+int numPasswords = 10;
+/*Length of each password*/
+int passwordLength = 8;
+/*Seed the random number generator using the current time*/ 
+srand(time(0));
+for (int i = 0; i < numPasswords; i++) {
+generatePassword(passwordLength);
+}
 return 0;
 }
+
