@@ -40,7 +40,6 @@ return password;
 int main(void)
 {
 char *password = generate_password();
-printf("Tada! Congrats");
 printf("Generated Password: %s\n", password);
 return 0;
 }
