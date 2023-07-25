@@ -33,6 +33,6 @@ if (i == 0)
 break;
 }
 /**After the loop finishes, print a newline character '\n'*/
-/**to move to the next line and create a new line in the output*/ 
+/**to move to the next line and create a new line in the output*/
 putchar('\n');
 }
