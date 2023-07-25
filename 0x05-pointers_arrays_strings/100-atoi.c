@@ -11,41 +11,30 @@ int _atoi(char *s)
 {
 int sign = 1;
 int result = 0;
-int i = 0;
-/**
- * Skip leading whitespace
- */
-while (s[i] == ' ')
-i++;
-/**
- * Check for a sign
- */
-if (s[i] == '-')
+int digit;
+while (*s != '\0')
 {
-sign = -1;
-i++;
-}
-else if (s[i] == '+')
+if (*s == '-')
+sign = -sign;
+else if (*s >= '0' && *s <= '9')
 {
-i++;
-}
-/**
- * Convert the digits to integer
- */
-while (s[i] >= '0' && s[i] <= '9')
-{   
-/**
- * Check for overflow
- */
-if (result > (INT_MAX - (s[i] - '0')) / 10)
+digit = *s - '0';
+/* Check for overflow */
+if (result > (INT_MAX - digit) / 10)
 {
 if (sign == 1)
 return INT_MAX;
 else
 return INT_MIN;
 }
-result = result * 10 + (s[i] - '0');
-i++;
+result = result * 10 + digit;
 }
-return result *sign;
+else if (result != 0)
+{
+/* Reached the end of the number */
+break;
+}
+s++;
+}
+return (result *sign);
 }
