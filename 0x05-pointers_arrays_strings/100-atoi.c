@@ -7,9 +7,9 @@
  */
 int _atoi(char *s)
 {
-long sign = 1;
-long result = 0;
-long digit;
+int sign = 1;
+int result = 0;
+int digit;
 while (*s != '\0')
 {
 if (*s == '-')
