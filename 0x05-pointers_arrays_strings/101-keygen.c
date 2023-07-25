@@ -8,16 +8,28 @@
  */
 char *generate_password(void)
 {
-static char password[7]; // 6 characters + 1 for null terminator
+/**
+* 6 characters + 1 for null terminator
+*/ 
+static char password[7]; 
 const char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 int i;
-srand(time(NULL)); // Seed the random number generator
+/**
+* Seed the random number generator
+*/ 
+srand(time(NULL));
 for (i = 0; i < 6; i++)
 {
-int index = rand() % (sizeof(charset) - 1); // Get a random index within the charset
+/**
+* Get a random index within the charset
+*/ 
+int index = rand() % (sizeof(charset) - 1);
 password[i] = charset[index];
 }
-password[6] = '\0'; // Null-terminate the password
+/**
+* Null-terminate the password
+*/ 
+password[6] = '\0'; 
 return password;
 }
 /**
