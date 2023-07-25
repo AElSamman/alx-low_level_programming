@@ -16,7 +16,8 @@ if (str == NULL)
 return;
 /**
 * Start of a while loop that will execute as long as the character
-* at index i of the string str is not the null terminator '\0'
+* at index i of the string str is not the null
+* @'\0': null terminator 
 */
 while (str[i] != '\0')
 {
@@ -34,5 +35,6 @@ break;
 }
 /**After the loop finishes, print a newline character '\n'*/
 /**to move to the next line and create a new line in the output*/
+/** @'\n': newline character*/
 putchar('\n');
 }
