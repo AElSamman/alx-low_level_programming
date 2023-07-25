@@ -8,10 +8,16 @@
  */
 void _puts(char *str)
 {
-    while (*str != '\0')
+    int i = 0;
+
+    /* Loop until the null terminator is reached */
+    while (str[i] != '\0')
     {
-        putchar(*str);
-        str++;
+        /* Write each character to the standard output */
+        putchar(str[i]);
+        i++;
     }
+
+    /* Write a new line character to the standard output */
     putchar('\n');
 }
