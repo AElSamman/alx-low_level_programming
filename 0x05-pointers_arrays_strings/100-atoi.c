@@ -23,9 +23,9 @@ digit = *s - '0';
 if (result > (INT_MAX - digit) / 10)
 {
 if (sign == 1)
-return INT_MAX;
+return (INT_MAX);
 else
-return INT_MIN;
+return (INT_MIN);
 }
 result = result * 10 + digit;
 }
