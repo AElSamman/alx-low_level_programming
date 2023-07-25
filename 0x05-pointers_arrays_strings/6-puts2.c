@@ -1,11 +1,9 @@
 #include <stdio.h>
 /**
- * puts2 - Prints every other character of a string, starting with the first character.
- *
+ * puts2 - Prints every other character of a string,
+ * starting with the first character.
  * @str: The input string.
- *
- * puts2 - Prints every other character of a string, starting with the first character.
- * 
+ * Return: Always 0 (Success)
  * Return: void
  */
 void puts2(char *str)
@@ -21,14 +19,15 @@ int i = 0;
  */
 if (str == NULL)
 return;
-/**Start of a while loop that will execute as long as the character
+/**
+* Start of a while loop that will execute as long as the character
 * at index i of the string str is not the null terminator '\0'
 */
 while (str[i] != '\0')
 {
 /**
-*  Print the character if it has an even index
-*/ 
+* Print the character if it has an even index
+*/
 if (i % 2 == 0)
 putchar(str[i]);
 i++;
