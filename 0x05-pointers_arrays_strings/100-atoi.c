@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 /**
  * _atoi - Convert a string to an integer.
  *
