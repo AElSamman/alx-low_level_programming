@@ -6,24 +6,24 @@
  *
  * Return: A pointer to the resulting string dest.
  */
-char *_strcat(char *dest, char *src)
+char *_strcat(char *dest, const char *src)
 {
-    int dest_len = 0;
-    int i = 0;
+    char *ptr = dest;
 
-    // Find the length of the destination string
-    while (dest[dest_len] != '\0')
-        dest_len++;
+    // Move the pointer to the end of the destination string
+    while (*ptr)
+        ptr++;
 
     // Append the src string to the dest string
-    while (src[i] != '\0')
+    while (*src)
     {
-        dest[dest_len + i] = src[i];
-        i++;
+        *ptr = *src;
+        ptr++;
+        src++;
     }
 
     // Add the terminating null byte at the end of the concatenated string
-    dest[dest_len + i] = '\0';
+    *ptr = '\0';
 
     return dest;
 }
